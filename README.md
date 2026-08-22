@@ -181,17 +181,17 @@ The design was tested with both **positive controls** and **negative controls**.
 
 | Test | Expected | Result |
 |---|---|:---:|
-| Clinical → Hospital Server | Allow | ✅ PASS |
-| Guest → Clinical | Deny | ✅ PASS |
-| Guest → IoMT | Deny | ✅ PASS |
-| Guest → Hospital Server | Deny | ✅ PASS |
-| IoMT → Administration | Deny | ✅ PASS |
-| IoMT → Billing | Deny | ✅ PASS |
-| IoMT → Security | Deny | ✅ PASS |
-| IoMT → Clinical | Allow | ✅ PASS |
-| IoMT → Hospital Server | Allow | ✅ PASS |
-| Hospital → Public Web Server | Allow | ✅ PASS |
-| Public Web Server → Hospital Server | Deny | ✅ PASS |
+| Clinical → Hospital Server | Allow |  PASS |
+| Guest → Clinical | Deny | PASS |
+| Guest → IoMT | Deny |  PASS |
+| Guest → Hospital Server | Deny |  PASS |
+| IoMT → Administration | Deny |  PASS |
+| IoMT → Billing | Deny |  PASS |
+| IoMT → Security | Deny |  PASS |
+| IoMT → Clinical | Allow | PASS |
+| IoMT → Hospital Server | Allow |  PASS |
+| Hospital → Public Web Server | Allow |  PASS |
+| Public Web Server → Hospital Server | Deny |  PASS |
 
 Full results: **[Security Validation Matrix](docs/test-matrix.md)**
 
