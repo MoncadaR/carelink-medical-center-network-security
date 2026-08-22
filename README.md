@@ -10,9 +10,10 @@
   <img src="https://img.shields.io/badge/Focus-Healthcare%20Cybersecurity-0A7EA4?style=for-the-badge" alt="Healthcare Cybersecurity">
   <img src="https://img.shields.io/badge/IoMT-Segmented-2F855A?style=for-the-badge" alt="IoMT Segmentation">
   <img src="https://img.shields.io/badge/Security-Least%20Privilege-5A67D8?style=for-the-badge" alt="Least Privilege">
+  <img src="https://img.shields.io/badge/Validation-16%2F16%20Passed-22863A?style=for-the-badge" alt="16 of 16 validation tests passed">
 </p>
 
-**[Architecture](docs/architecture.md) · [Security Controls](docs/security-controls.md) · [Threat Model](docs/threat-model.md) · [Validation](docs/test-matrix.md) · [Troubleshooting](docs/troubleshooting.md)**
+**[Architecture](docs/architecture.md) · [Security Controls](docs/security-controls.md) · [Threat Model](docs/threat-model.md) · [Validation](docs/test-matrix.md) · [NIST CSF Mapping](docs/nist-csf-mapping.md) · [Troubleshooting](docs/troubleshooting.md)**
 
 </div>
 
@@ -25,6 +26,13 @@ CareLink Medical Center is a fictional healthcare environment designed to demons
 The project separates clinical workstations, medical and IoMT devices, administrative systems, billing systems, security operations, guest devices, and hospital servers into dedicated security zones.
 
 Rather than building only a functional network, the lab focuses on **security boundaries, controlled communication, lateral-movement reduction, and perimeter defense**.
+
+### What I Built
+
+I designed and implemented the network topology, addressing plan, VLAN segmentation,
+inter-VLAN routing, DHCP services, ACL policy, perimeter firewall, NAT/PAT, and
+validation plan. I then tested allowed and denied paths and documented a return-path
+firewall issue using hop-by-hop packet analysis.
 
 ### At a Glance
 
@@ -39,6 +47,35 @@ Rather than building only a functional network, the lab focuses on **security bo
 | Internet Access | NAT/PAT |
 | Validation | Positive + negative security controls |
 | Troubleshooting | Packet-level Simulation Mode analysis |
+
+### Portfolio Highlights
+
+- **Seven trust zones** separate clinical, IoMT, administrative, billing, security, guest, and server assets.
+- **Least-privilege ACLs** restrict Guest and IoMT initiation toward higher-trust networks.
+- **Sixteen positive and negative tests** verify permitted traffic and expected denials.
+- **Reproducible evidence** includes the Packet Tracer file, device configurations, screenshots, and test matrix.
+- **Framework context** maps demonstrated outcomes to NIST CSF 2.0 without claiming compliance.
+
+---
+
+## Quick Start
+
+### Explore without Packet Tracer
+
+1. Review the [architecture and addressing plan](docs/architecture.md).
+2. Read the [threat model](docs/threat-model.md) and [security-control rationale](docs/security-controls.md).
+3. Inspect the sanitized device configurations in [`configs/`](configs/README.md).
+4. Compare expected and observed behavior in the [16-test validation matrix](docs/test-matrix.md).
+
+### Run the lab
+
+1. Install Cisco Packet Tracer.
+2. Download or clone this repository.
+3. Open [`packet-tracer/CareLink-Medical-Center-Final.pkt`](packet-tracer/CareLink-Medical-Center-Final.pkt).
+4. Use **Realtime Mode** for connectivity checks and **Simulation Mode** for hop-by-hop inspection.
+5. Reproduce the cases and verification commands documented in the [validation matrix](docs/test-matrix.md).
+
+> The included addresses use private or documentation ranges. The environment contains no real patient data, credentials, or hospital infrastructure.
 
 ---
 
@@ -317,6 +354,7 @@ carelink-medical-center-network-security/
 ├── LICENSE
 │
 ├── configs/
+│   ├── README.md
 │   ├── ASA1-PERIMETER.txt
 │   ├── ISP-R1.txt
 │   ├── R1-HOSPITAL.txt
@@ -327,6 +365,7 @@ carelink-medical-center-network-security/
 │
 ├── docs/
 │   ├── architecture.md
+│   ├── nist-csf-mapping.md
 │   ├── security-controls.md
 │   ├── test-matrix.md
 │   ├── threat-model.md
@@ -362,6 +401,7 @@ carelink-medical-center-network-security/
 | [Security Controls](docs/security-controls.md) | Implemented defensive controls |
 | [Threat Model](docs/threat-model.md) | Assets, threats, and mitigations |
 | [Validation Matrix](docs/test-matrix.md) | Positive and negative test results |
+| [NIST CSF 2.0 Mapping](docs/nist-csf-mapping.md) | Demonstrated outcomes and intentional gaps |
 | [Troubleshooting](docs/troubleshooting.md) | Investigation and lessons learned |
 
 ---
